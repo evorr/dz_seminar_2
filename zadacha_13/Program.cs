@@ -7,15 +7,19 @@
 
 Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-int SecDigit(int num)
+int ThirdDigit(int number)
 {
-    int res = (num%1000)/100;
-    if(res>=0)return res;
-    else{
-        res=res*-1;}
-    return res;
+    while (number>=1000||number<=-1000)
+    {
+        number=number/10;
+    }
+    int result = number%10;
+    if(result>=0) return result;
+    else {
+        result=result*-1;}
+        return result;
 }
-int secondDigit=SecDigit(num);
-if (num<100&&num>=-100)Console.WriteLine($"{num} -> третьей цифры нет");
-else Console.WriteLine($"{num} -> {secondDigit}");
+int thirdDigit=ThirdDigit(num);
+if (num<100&&num>-100)Console.WriteLine($"{num} -> третьей цифры нет");
+else Console.WriteLine($"{num} -> {thirdDigit}");
 
